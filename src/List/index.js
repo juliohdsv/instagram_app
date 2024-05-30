@@ -13,7 +13,11 @@ export default function List(props){
     }   
  
     return(
-      <Text>{likers} {likers > 1 ? "Curtidas" : "Curtida"}</Text>
+      <Text 
+        className="font-semibold pl-2"
+      >
+        {likers} {likers > 1 ? "Curtidas" : "Curtida"}
+      </Text>
     );
   }
 
@@ -52,13 +56,12 @@ export default function List(props){
             source={require("../../assets/images/send.png")}
           />
         </TouchableOpacity>
-
-        {showLikers(props.data.likers)}
-        
-        <Text>{props.data.nome}</Text> 
-        <Text>{props.data.descricao}</Text>
-
       </View>
+      
+      {showLikers(props.data.likers)}
+        
+      <Text className="pl-2 font-semibold">{props.data.nome}</Text> 
+      <Text className="pl-2 mb-2">{props.data.descricao}</Text>
     </View>
   );
 }
