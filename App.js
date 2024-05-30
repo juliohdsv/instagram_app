@@ -65,7 +65,6 @@ export default function App() {
         renderItem={ ({item})=> <List data={item}/> }
         showsVerticalScrollIndicator={false}
       >
-
       </FlatList>
       {/* <StatusBar style="auto" /> */}
     </View>

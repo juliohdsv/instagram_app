@@ -7,6 +7,16 @@ export default function List(props){
     return likeada ? require("../../assets/images/likeada.png") : require("../../assets/images/like.png")
   }
 
+  function showLikers(likers){
+    if(likers === 0){
+      return;
+    }   
+ 
+    return(
+      <Text>{likers} {likers > 1 ? "Curtidas" : "Curtida"}</Text>
+    );
+  }
+
   return(
     <View>            
       <View className="flex-1 flex-row items-center p-4">
@@ -42,6 +52,12 @@ export default function List(props){
             source={require("../../assets/images/send.png")}
           />
         </TouchableOpacity>
+
+        {showLikers(props.data.likers)}
+        
+        <Text>{props.data.nome}</Text> 
+        <Text>{props.data.descricao}</Text>
+
       </View>
     </View>
   );
